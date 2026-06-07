@@ -44,8 +44,13 @@ const agents = [
 const providers = {
   Mode: ["Smart", "Mixed", "Fast", "Creative", "Reasoning"],
   OpenAI: ["GPT-5.2", "GPT-5.2 pro", "GPT-5 mini", "GPT-5 nano"],
-  Anthropic: ["Claude Sonnet 4.5", "Claude Haiku 4.5", "Claude Opus 4.1"],
+  Anthropic: ["Claude Opus 4.5", "Claude Sonnet 4.5", "Claude Haiku 4.5"],
+  xAI: ["Grok 4.20", "Grok 4.20 Multi-Agent", "Grok 4.3", "Grok Build 0.1"],
   Google: ["Gemini 3 Pro Preview", "Gemini 3 Flash Preview", "Gemini 2.5 Flash"],
+  DeepSeek: ["DeepSeek V3.2", "DeepSeek Chat", "DeepSeek Reasoner"],
+  Meta: ["Llama 4", "Llama 3.3", "Llama 3.1"],
+  Mistral: ["Mistral Medium 3", "Mistral Large 2.1", "Codestral", "Devstral"],
+  Perplexity: ["Sonar Pro", "Sonar Reasoning Pro", "Sonar Deep Research"],
   Local: ["Llama 4", "Mistral Local"]
 };
 
@@ -73,10 +78,17 @@ const latestModels = [
   },
   {
     provider: "Anthropic",
-    model: "Claude Sonnet 4.5",
+    model: "Claude Opus 4.5",
     selectProvider: "Anthropic",
-    selectModel: "Claude Sonnet 4.5",
-    note: "Anthropic recommends starting here for most Claude use cases. Haiku 4.5 is the faster small model."
+    selectModel: "Claude Opus 4.5",
+    note: "Claude's high-end option for difficult coding, writing, and analysis. Sonnet is the balanced pick, and Haiku is faster."
+  },
+  {
+    provider: "xAI",
+    model: "Grok 4.20",
+    selectProvider: "xAI",
+    selectModel: "Grok 4.20",
+    note: "Grok's newest flagship family for fast answers, tool calling, and reasoning-style work."
   },
   {
     provider: "Google",
@@ -84,6 +96,34 @@ const latestModels = [
     selectProvider: "Google",
     selectModel: "Gemini 3 Pro Preview",
     note: "Google's high-end multimodal model. Gemini 3 Flash Preview is the faster balanced option."
+  },
+  {
+    provider: "DeepSeek",
+    model: "DeepSeek V3.2",
+    selectProvider: "DeepSeek",
+    selectModel: "DeepSeek V3.2",
+    note: "A strong value model family for chat, coding, and reasoning-style prompts."
+  },
+  {
+    provider: "Meta",
+    model: "Llama 4",
+    selectProvider: "Meta",
+    selectModel: "Llama 4",
+    note: "Open model family option for apps that want local, hosted, or customizable deployments."
+  },
+  {
+    provider: "Mistral",
+    model: "Mistral Medium 3",
+    selectProvider: "Mistral",
+    selectModel: "Mistral Medium 3",
+    note: "Mistral's frontier-class option, with Codestral and Devstral choices for coding workflows."
+  },
+  {
+    provider: "Perplexity",
+    model: "Sonar Pro",
+    selectProvider: "Perplexity",
+    selectModel: "Sonar Pro",
+    note: "Search-focused model family for web-grounded answers and research workflows."
   }
 ];
 

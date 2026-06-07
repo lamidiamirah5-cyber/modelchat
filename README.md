@@ -2,6 +2,18 @@
 
 ModelMix is a static multi-model chatbot website. It opens directly to a Copilot-inspired chat screen with a Smart model pill, a Mixed mode, and a model guide.
 
+Included model families:
+
+- OpenAI
+- Claude / Anthropic
+- Grok / xAI
+- Gemini / Google
+- DeepSeek
+- Meta Llama
+- Mistral
+- Perplexity Sonar
+- Local model placeholders
+
 ## Publish it free with GitHub Pages
 
 This project does not need a build step.
