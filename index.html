@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ModelMix is a publish-ready multi-model AI chatbot interface with Smart, Mixed, Fast, Creative, and Reasoning model modes."
+    />
+    <meta property="og:title" content="ModelMix Chat" />
+    <meta
+      property="og:description"
+      content="A Copilot-inspired chatbot website where people can switch AI modes and explore the latest model choices."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#06121b" />
+    <title>ModelMix Chat - Multi-model AI assistant</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="try">
+      <aside class="rail" aria-label="Assistant types">
+        <div class="brand">
+          <button class="new-chat" type="button">
+            <span aria-hidden="true">+</span>
+            <strong>New chat</strong>
+          </button>
+        </div>
+
+        <nav class="side-nav" aria-label="Main navigation">
+          <button type="button">Library</button>
+          <button type="button">Tasks <small>Preview</small></button>
+          <button type="button">Discover</button>
+          <button type="button">Create</button>
+          <button type="button">Labs</button>
+        </nav>
+
+        <a class="publish-link" href="#publish">Publish site</a>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Recent</h2>
+          </div>
+          <div class="recent-list">
+            <button type="button">Discord Music Bot Development</button>
+            <button type="button">YouTube Video Analytics Help</button>
+            <button type="button">Three Blue Helicopters Sighting</button>
+            <button type="button">Learning app ideas</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="chat-area">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">ModelMix</p>
+            <h1 id="activeAgentName">New chat</h1>
+          </div>
+        </header>
+
+        <div class="status-strip">
+          <div>
+            <span class="status-dot"></span>
+            <span id="modelStatus">Demo responses active</span>
+          </div>
+          <button class="text-button" id="clearChat">Clear chat</button>
+        </div>
+
+        <section class="messages" id="messages" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <p>Hi, welcome to ModelMix,</p>
+            <h2>what should we dive into today?</h2>
+            <form class="composer hero-composer" id="chatForm">
+              <textarea id="promptInput" rows="1" placeholder="Message ModelMix" autocomplete="off"></textarea>
+              <div class="composer-tools">
+                <button class="icon-button add-button" type="button" id="promptIdeas" aria-label="Suggest prompt">+</button>
+                <button class="model-chip" id="modelBar" type="button" aria-haspopup="dialog" aria-controls="modelSheet">
+                  <span id="modelBarTitle">Smart</span>
+                  <span aria-hidden="true">v</span>
+                </button>
+                <span class="tool-spacer"></span>
+                <button class="icon-button ghost-tool" type="button" aria-label="Explore">oo</button>
+                <button class="icon-button ghost-tool" type="button" aria-label="Voice">|||</button>
+                <button class="send-button" type="submit">Send</button>
+              </div>
+            </form>
+            <div class="quick-prompts">
+              <button type="button" data-idea="Help me choose the best AI model for a chatbot app.">Choose a model</button>
+              <button type="button" data-idea="Design the first screen for my AI chatbot app.">Design the app</button>
+              <button type="button" data-idea="Explain the difference between reasoning, fast, and creative AI models.">Explain models</button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <aside class="detail-panel" aria-label="Model settings">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Model Settings</h2>
+          </div>
+
+          <div class="model-picker">
+            <label for="providerSelect">Provider</label>
+            <select id="providerSelect"></select>
+            <label for="modelSelect">Model</label>
+            <select id="modelSelect"></select>
+          </div>
+
+          <label class="setting">
+            <span>Temperature</span>
+            <input id="temperature" type="range" min="0" max="100" value="45" />
+          </label>
+
+          <label class="setting">
+            <span>Memory</span>
+            <input id="memoryToggle" type="checkbox" checked />
+          </label>
+
+          <label class="setting">
+            <span>Web search</span>
+            <input id="searchToggle" type="checkbox" />
+          </label>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Selected AI</h2>
+          </div>
+          <img class="model-map" src="assets/model-map.svg" alt="A diagram showing prompts routed to different AI models" />
+          <p class="agent-description" id="agentDescription"></p>
+          <div class="capability-grid" id="capabilityGrid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>API Ready</h2>
+          </div>
+          <p class="muted">
+            This first version runs locally with demo replies. The controls are shaped so real model calls can be added next.
+          </p>
+        </section>
+      </aside>
+    </main>
+
+    <section class="site-section intro-section" aria-labelledby="about-title">
+      <div class="section-copy">
+        <p class="eyebrow">Website ready</p>
+        <h2 id="about-title">A public home for your multi-model chatbot.</h2>
+        <p>
+          ModelMix is built as a static website, so you can publish it on GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any basic web host.
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <strong>Smart</strong>
+          <span>Best automatic model choice for normal chat.</span>
+        </article>
+        <article>
+          <strong>Mixed</strong>
+          <span>Blends multiple AI styles into one stronger response.</span>
+        </article>
+        <article>
+          <strong>Reasoning</strong>
+          <span>For deeper thinking, coding, planning, and hard questions.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="site-section model-section" aria-labelledby="models-title">
+      <div class="section-copy">
+        <p class="eyebrow">Model picker</p>
+        <h2 id="models-title">Visitors tap the Smart pill to choose a model mode.</h2>
+        <p>
+          The demo picker already includes Smart, Mixed, OpenAI, Claude, Gemini, and local model choices. The next upgrade is connecting those controls to live API calls.
+        </p>
+      </div>
+      <img src="assets/model-map.svg" alt="ModelMix routing diagram" />
+    </section>
+
+    <section class="site-section plans-section" aria-labelledby="plans-title">
+      <div class="section-copy">
+        <p class="eyebrow">Upgrade paths</p>
+        <h2 id="plans-title">Start free, then offer better models as paid upgrades.</h2>
+        <p>
+          Keep the public demo free. Later, paid plans can unlock longer chats, priority responses, newer frontier models, file uploads, and saved chat history.
+        </p>
+      </div>
+      <div class="plan-grid">
+        <article>
+          <span>Free</span>
+          <strong>$0</strong>
+          <p>Demo replies, Smart mode preview, and basic model education.</p>
+        </article>
+        <article class="featured-plan">
+          <span>Plus</span>
+          <strong>$5/mo</strong>
+          <p>Better responses, longer chats, Mixed mode, and newer fast models.</p>
+        </article>
+        <article>
+          <span>Pro</span>
+          <strong>$12/mo</strong>
+          <p>Newest reasoning models, priority usage, saved chats, and file tools.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="site-section publish-section" id="publish" aria-labelledby="publish-title">
+      <div class="section-copy">
+        <p class="eyebrow">Publish</p>
+        <h2 id="publish-title">Publish free with GitHub Pages.</h2>
+        <p>
+          This site does not require a build step. Put the files in a GitHub repository, turn on Pages, and GitHub gives you a free public link.
+        </p>
+      </div>
+      <div class="publish-steps">
+        <div><span>1</span> Put the folder in a GitHub repository.</div>
+        <div><span>2</span> Open Settings, then Pages.</div>
+        <div><span>3</span> Choose Deploy from branch, main, root.</div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <strong>ModelMix</strong>
+      <span>Multi-model AI chat website.</span>
+      <a href="#try">Back to chat</a>
+    </footer>
+
+    <dialog class="model-sheet" id="modelSheet">
+      <div class="sheet-header">
+        <div>
+          <p class="eyebrow">Latest model guide</p>
+          <h2>Current AI models to try</h2>
+        </div>
+        <button class="icon-button" id="closeModelSheet" type="button" aria-label="Close model guide">x</button>
+      </div>
+      <div class="latest-models" id="latestModels"></div>
+      <p class="muted sheet-note">
+        Use frontier models for hard reasoning and coding, mini or flash models for fast everyday chat, and image/audio models only when your app needs those media types.
+      </p>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ModelMix logo</title>
+  <desc id="desc">A rounded square with connected model nodes.</desc>
+  <rect width="64" height="64" rx="14" fill="#06121b"/>
+  <path d="M18 33c11-16 20-16 31 0" fill="none" stroke="#69b7ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M18 33c11 14 20 14 31 0" fill="none" stroke="#b54d65" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="18" cy="33" r="6" fill="#ecf3ff"/>
+  <circle cx="33" cy="21" r="6" fill="#69b7ff"/>
+  <circle cx="49" cy="33" r="6" fill="#ecf3ff"/>
+  <circle cx="33" cy="45" r="6" fill="#bf6a02"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 220" role="img" aria-labelledby="title desc">
+  <title id="title">Model routing diagram</title>
+  <desc id="desc">A prompt node connects to four assistant model nodes.</desc>
+  <rect width="540" height="220" fill="#f8f5ec"/>
+  <g fill="none" stroke="#d3cec0" stroke-width="3">
+    <path d="M174 110 C230 52 290 48 360 66"/>
+    <path d="M174 110 C236 94 292 96 360 110"/>
+    <path d="M174 110 C232 160 292 164 360 154"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-weight="700">
+    <rect x="48" y="70" width="126" height="80" rx="12" fill="#19796b"/>
+    <text x="111" y="104" fill="#fff" font-size="18" text-anchor="middle">Prompt</text>
+    <text x="111" y="128" fill="#dff3ed" font-size="13" text-anchor="middle">user intent</text>
+    <rect x="360" y="34" width="132" height="44" rx="10" fill="#315f97"/>
+    <text x="426" y="62" fill="#fff" font-size="15" text-anchor="middle">Research</text>
+    <rect x="360" y="88" width="132" height="44" rx="10" fill="#b54d65"/>
+    <text x="426" y="116" fill="#fff" font-size="15" text-anchor="middle">Creative</text>
+    <rect x="360" y="142" width="132" height="44" rx="10" fill="#c77b28"/>
+    <text x="426" y="170" fill="#fff" font-size="15" text-anchor="middle">Coach</text>
+  </g>
+  <circle cx="252" cy="110" r="18" fill="#fff" stroke="#19796b" stroke-width="3"/>
+  <path d="M244 110h16M252 102v16" stroke="#19796b" stroke-width="3" stroke-linecap="round"/>
+</svg>
